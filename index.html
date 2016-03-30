@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  </head>
+  <body>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/underscore/underscore-min.js"></script>
+    <script src="node_modules/backbone/backbone-min.js"></script>
+
+    <script src="data/photoData.js"></script>
+
+    <script src="models/PhotoModel.js"></script>
+    <script src="models/AppModel.js"></script>
+
+    <script src="collections/Photos.js"></script>
+
+    <div class="header">
+      <div class="container">
+        <img src="img/galleriaLogo-1-1.png" class="galleria-logo">
+      </div>
+    </div>
+
+    <script src="views/PhotoEntryView.js"></script>
+    <script src="views/PhotoLibraryView.js"></script>
+    <script src="views/PhotoDisplayView.js"></script>
+    <script src="views/AppView.js"></script>
+    <script>
+      $(function() {
+        var library = new Photos(photoData);
+        var app = new AppModel({library: library});
+        var appView = new AppView({model: app});
+        $('body').append(appView.render());
+      });
+    </script>
+  </body>
+</html>
