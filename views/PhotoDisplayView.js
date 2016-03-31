@@ -1,6 +1,6 @@
 var PhotoDisplayView = Backbone.View.extend({
 
-  template: _.template('<img src="<%= url %>" class="display-img"><p class="display-img-title"><%= title %></p>'),
+  template: _.template('<img src="<%= url %>" class="display-img"><p class="display-img-title"><%= title %> <br/> <%= description %></p>'),
 
   initialize: function(params) {
     this.render();
